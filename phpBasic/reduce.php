@@ -49,6 +49,7 @@ function solution($list)
     return $multiplyKill;
 }
 
+    // return accumulate(filter(map($list, function($item) { return ceil($item); }), function($item) { return $item % 2 == 0; }), function($item, $acc) { return $acc * $item; }, $acc);
 
 
 
