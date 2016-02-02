@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 require 'base.php';
 
-function treeMap($list, $func, $acc) 
+function treeMap($list, $func, $acc)
 {
 	$iter = function ($list, $acc) use (&$iter, $func)
 	{
