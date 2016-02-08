@@ -1,0 +1,13 @@
+Используя telnet выполните запрос к hexlet.local (расположен на localhost) на порт 8080. Параметры запроса: глагол get, страница /account, протокол http 1.1, куки name со значением user и secret со значением secret_hash;
+Запишите ваш request в файл solution;
+
+GET /account HTTP/1.1
+HOST: hexlet.local
+Cookie: name=user;secret=secret_hash
+
+Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 28
+Connection: close
+
+//login=user&password=12345678

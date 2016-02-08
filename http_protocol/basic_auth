@@ -1,0 +1,15 @@
+Используя telnet авторизуйтесь на hexlet.local:8080 (расположен на localhost). Параметры запроса: глагол get, страница /admin, протокол http 1.1, имя пользователя Aladdin, пароль open sesame;
+Запишите ваш request в файл solution;
+Подсказка
+Для кодирования логина и пароля используйте следующую команду в терминале: printf '<username>:<password>' | base64
+
+GET /admin HTTP/1.1
+HOST: hexlet.local
+Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+
+
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 28
+Connection: close
+
+//login=user&password=12345678

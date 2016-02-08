@@ -1,0 +1,13 @@
+Используя telnet выполните запрос к hexlet.local (расположен на localhost) на порт 8080. Передайте в строке запроса следующие параметры: key равный value и another_key равный another_value. Параметры запроса: глагол get, страница /, протокол http 1.1;
+Запишите ваш request в файл solution;
+
+GET /?key=value&another_key=another_value HTTP/1.1
+HOST: hexlet.local
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 28
+Connection: close
+
+login=user&password=12345678
+//$REQUEST[]
+//GET - idempodent
+//POST - not

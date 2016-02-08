@@ -1,0 +1,13 @@
+Используя telnet выполните запрос к hexlet.local (расположен на localhost) на порт 8080. Параметры запроса: глагол get, страница /stream, протокол http 1.1;
+Запишите ваш request в файл solution;
+
+GET /stream HTTP/1.1
+Host: hexlet.local
+
+
+Transfer-Encoding: chunked
+Content-Type:  application/x-www-form-urlencoded
+//Content-Length: 30
+Connection: close
+
+username=admin&password=secret
