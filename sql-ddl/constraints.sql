@@ -1,14 +1,4 @@
-DROP TABLE IF EXISTS "cars";
-
-CREATE TABLE cars (
-  id integer PRIMARY KEY,
-  name character varying UNIQUE NOT NULL,
-  price numeric,
-  created_at timestamp NOT NULL
-)
-
--- schema
-select * from schema.TABLE;
-
-create schema myschema;
--- \dt
+select * from courses where category_id in (select id from categories where id > 3);
+select * from (select id, category_id from categories where id > 2) AS cat;
+Выполните в psql запрос который выбирает из таблицы goods все названия товаров, которые находятся в опубликованных категориях (state имеет значение published);
+select name from goods where category_id in (select id from categories where state like 'p%');
