@@ -17,26 +17,14 @@
 //
 // '/' == cd('/current/path', '/')
 // '/current/anotherpath' == cd('/current/path', '.././anotherpath')
-function cd ($curDir, $needDir)
+function cd($current, $move)
 {
-  // $moved = '';
-  $parse = explode('/', $needDir);
-  if ($parse[0] == '') {                              // /usr/local
-    return $needDir . PHP_EOL;
-  } else if ($parse[0] == '.' || $parse[0] == '') {   // ./local
-    return $curDir . $needDir . PHP_EOL;
-  } else if ($parse[0] == '..') {                     // ../bin
-    $curDirParsed = explode('/', $curDir);            // []
-    $needDirParsed = explode('/', $needDir);            // []
-    array_pop($curDirParsed);                          // pop last item
-    array_shift($needDirParsed);
-    $needDir = implode('/', $needDirParsed);
-    $curDirParsed[] = $needDir;
-    $curDirParsed = implode('/', $curDirParsed);
-    return $curDirParsed;
-  } else {
-    return 'nope' . PHP_EOL;
-  }
-  // print_r($parse);
+    // BEGIN (write your solution here)
+    $cParsed = explode('/', $current);    // ['', 'current', 'path']
+    $mParsed = explode('/', $move);       // ['', '']
+    $a = split('/', $move);
+    print_r($a);
+    // END
 }
-echo cd('/home/me', '../usr/local/bin');
+
+echo cd('/current/path', '/') . PHP_EOL;
