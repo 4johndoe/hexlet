@@ -36,4 +36,4 @@ function cd ($curDir, $needDir)
   }
   // print_r($parse);
 }
-echo cd('/home/me', '../usr/local/bin');
+//echo cd('/home/me', '../usr/local/bin');
