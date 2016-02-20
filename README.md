@@ -16,10 +16,10 @@ stack
 5. php. func - done
 6. php. imperativ - done
 7. php. algorythms - done
-8. php. oop - 
-9. db. sql ddl -
-10. bd. sql dql -
-11. php. pdo -
+8. php. oop - done 
+9. db. sql ddl - done
+10. bd. sql dql - done
+11. php. pdo - done
 12. php.io -
 13. php. tdd -
 14. HTTP - done
