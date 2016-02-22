@@ -1,30 +1,27 @@
 <?php
-
-// echo __FILE__ . PHP_EOF;
-// echo __DIR__;
-// echo basename(__FILE__);
-// print_r(pathinfo());
-// echo getcwd();
-//
-// $pathParts = ['var', 'tmp', 'hexlet'];
-// $path = implode(DIRECTORY_SEPARATOR, $pathParts);
-// // echo DIRECTORY_SEPARATOR . $path;
-//
-// $file = new SplFileInfo(__FILE__);
-// echo $file->getPathInfo();
-// echo $file->getFileName();;
-// echo $file->getExtension();
-//
 // '/' == cd('/current/path', '/')
 // '/current/anotherpath' == cd('/current/path', '.././anotherpath')
-function cd($current, $move)
+function cd ($current, $move)
 {
-    // BEGIN (write your solution here)
-    $cParsed = explode('/', $current);    // ['', 'current', 'path']
-    $mParsed = explode('/', $move);       // ['', '']
-    $a = split('/', $move);
-    print_r($a);
-    // END
+  if (0 === strpos('/', $move)) {
+    return $move;
+  }
+  $currentParts = explode(DIRECTORY_SEPARATOR, $current); // ['', 'current', 'path']
+  $parts = explode(DIRECTORY_SEPARATOR, $move);           // ['..', '.', 'anotherpath']
+  // print_r($parts);
+  $updatedParts = array_reduce($parts, function ($acc, $item) {
+    switch ($item) {
+      case '.':
+        return $acc;
+      case '..':
+        return $array_slice($acc, 0, -1);
+      case '':
+        return $acc;
+      default:
+        $acc[] = $item;
+        return $acc;
+    }
+  }, $currentParts);
+  return implode(DIRECTORY_SEPARATOR, $updatedParts);
 }
-
-echo cd('/current/path', '/') . PHP_EOL;
+cd('/current/path', '.././anotherpath');
