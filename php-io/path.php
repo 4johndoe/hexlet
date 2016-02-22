@@ -14,7 +14,7 @@ function cd ($current, $move)
       case '.':
         return $acc;
       case '..':
-        return $array_slice($acc, 0, -1);
+        return array_slice($acc, 0, -1);
       case '':
         return $acc;
       default:
