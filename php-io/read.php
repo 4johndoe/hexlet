@@ -1,5 +1,7 @@
 <?php 
-
+$a = ['first' => 'hello world'];
+print_r($a);
+/*
 $file = '';
 ######################################
 is_readable($file); //bool
@@ -33,4 +35,4 @@ $lines = new LimitIterator(
 foreach ($lines as $line) {
 	echo $line; // out lines 10 to 20
 }
-?>
+?>*/
