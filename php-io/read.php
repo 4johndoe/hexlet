@@ -1,24 +1,23 @@
-<?php 
+<?php
 
-function grep($string, $path)
-{
-    // BEGIN (write your solution here)
-    $iterator = new \GlobIterator($path);
-    $lines = [];
-    foreach ($iterator as $path => $info) { 
-    	if (!$info->isFile()) {				// list all files in $path
-    		continue;						//
-    	}									//
-    	$content = file($path);
-    	foreach ($content as $line) {
-    		if (false !== strpos($line, $string)) {
-    			$lines[] = $line;
-    		}
-    	}
-    }
+function grep($string, $path) {
+	// BEGIN (write your solution here)
+	$iterator = new \GlobIterator($path);
+	$lines = [];
+	foreach ($iterator as $path => $info) {
+		if (!$info->isFile()) { // list all files in $path
+			continue; //
+		} //
+		$content = file($path);
+		foreach ($content as $line) {
+			if (false !== strpos($line, $string)) {
+				$lines[] = $line;
+			}
+		}
+	}
 
-    return $lines;
-    // END
+	return $lines;
+	// END
 }
 // $file = '';
 // ######################################
@@ -46,7 +45,7 @@ function grep($string, $path)
 // }
 // ######################################
 // $lines = new LimitIterator(
-// 	$file, 
+// 	$file,
 // 	9, // start at line 9
 // 	10 // iterate 10 lines
 // );
