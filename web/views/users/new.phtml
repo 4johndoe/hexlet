@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>New User</h1>
+	<div>
+		<a href="/users/">users list</a>
+	</div>
+
+	<br>
+	<form action="/users" method="post">
+		<div>
+			<b>Email</b>
+			<input type="text" name="user[email]" value="<?= $user['email'] ?>">
+			<?php if (isset($errors['email'])) : ?>
+				<div style="color: red"><?= $errors['email'] ?></div>
+			<?php endif ?>
+		</div>
+
+		<br>
+
+		<div>
+			First Name
+			<input type="text" name="user[first_name]" value="<?= $user['first_name'] ?>">
+		</div>
+		
+		<br>
+
+		<div>
+			<input type="submit">
+		</div>
+	</form>
+<!-- 	<table border="1" style="border-collapse; collapse;">
+		<tr>
+			<td>id</td>
+			<td>Email</td>
+			<td>First Name</td>
+		</tr>
+
+		<?php foreach ($users as $user) : ?>
+			<tr>
+				<td><?= $user['id'] ?></td>
+				<td><?= $user['email'] ?></td>
+				<td><?= $user['first_name'] ?></td>
+			</tr>
+		<?php endforeach ?>
+	</table> -->
+</body>
+</html>
